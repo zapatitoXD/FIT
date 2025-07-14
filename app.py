@@ -25,9 +25,12 @@ app = Flask(__name__)
 app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 mongo = PyMongo(app)
 
+from flask import redirect, url_for
+
 @app.route("/")
 def home():
-    return "✅ API Fitcal conectada a MongoDB"
+    return redirect(url_for("login_page"))
+
 
 @app.route("/login", methods=["GET"])
 def login_page():
