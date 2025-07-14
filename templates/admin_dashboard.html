@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel de Administrador</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Panel de Administrador</h1>
+
+  <button onclick="window.location.href='/admin/registro'">➕ Registrar nuevo usuario</button>
+  <br><br>
+
+  <h2>📋 Listar usuarios</h2>
+  <button onclick="listarUsuarios('')">Todos</button>
+  <button onclick="listarUsuarios('estudiante')">Estudiantes</button>
+  <button onclick="listarUsuarios('entrenador')">Entrenadores</button>
+
+  <h2>📤 Exportar datos</h2>
+  <button onclick="exportar('usuarios')">Usuarios</button>
+  <button onclick="exportar('comidas')">Comidas</button>
+  <button onclick="exportar('progreso')">Progreso</button>
+  <button onclick="exportar('rutinas')">Rutinas</button>
+  <button onclick="exportar('alimentos')">Alimentos</button>
+
+    <h2>📋 Usuarios</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Rol</th>
+          <th>Código</th>
+          <th>Sexo</th>
+          <th>Edad</th>
+          <th>Carrera</th>
+          <th>Fecha</th>
+        </tr>
+      </thead>
+      <tbody id="resultado">
+    <!-- Se llena dinámicamente -->
+  </tbody>
+</table>
+
+  <br>
+  <button id="logout-btn">Cerrar sesión</button>
+</div>
+
+<script src="/static/js/admin_dashboard.js"></script>
+</body>
+</html>

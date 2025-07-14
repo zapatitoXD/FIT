@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard Estudiante</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 id="saludo">Bienvenido, estudiante</h1>
+
+    <div class="botones" style="margin-top: 30px;">
+      <button onclick="location.href='/rutina'">🏋️‍♀️ Rutinas</button>
+      <button onclick="location.href='/nutricion'">🍽️ Nutrición</button>
+      <button onclick="location.href='/progreso'">📊 Progreso</button>
+    </div>
+    <script src="/static/js/dashboard_estudiante.js"></script>
+    <div style="text-align: center; margin-top: 50px;">
+      <button onclick="cerrarSesion()" style="background-color: #e74c3c; color: white;">Cerrar sesión</button>
+    </div>
+  </div>
+
+  <script>
+    function cerrarSesion() {
+      localStorage.removeItem("token");
+      location.href = "/login";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Asignar Rutina</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Asignar rutina a estudiante</h1>
+
+  <form id="form-rutina">
+    <label>Email del estudiante:</label>
+    <input type="email" id="estudiante_email" required>
+
+    <label>Nombre de la rutina:</label>
+    <input type="text" id="nombre_rutina" required>
+
+    <label>Descripción:</label>
+    <textarea id="descripcion" required></textarea>
+
+    <label>Día (en inglés):</label>
+    <select id="dia" required>
+      <option value="">-- Selecciona --</option>
+      <option value="monday">Monday</option>
+      <option value="tuesday">Tuesday</option>
+      <option value="wednesday">Wednesday</option>
+      <option value="thursday">Thursday</option>
+      <option value="friday">Friday</option>
+      <option value="saturday">Saturday</option>
+      <option value="sunday">Sunday</option>
+    </select>
+
+    <h3>Ejercicios</h3>
+    <div id="ejercicios-container"></div>
+    <button type="button" id="agregar-ejercicio">➕ Agregar ejercicio</button>
+
+    <br><br>
+    <button type="submit">Asignar rutina</button>
+  </form>
+
+  <div id="respuesta"></div>
+
+  <hr>
+
+  <h2>Consultar rutinas de un estudiante</h2>
+  <input type="email" id="email-consulta" placeholder="Email del estudiante">
+  <button id="consultar-rutinas">Buscar</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Día</th>
+        <th>Ejercicios</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="tabla-rutinas">
+      <!-- Se llena dinámicamente -->
+    </tbody>
+  </table>
+
+  <br>
+  <button onclick="window.location.href='/entrenador'">⬅ Volver al panel</button>
+</div>
+
+<script src="/static/js/entrenador_rutinas.js"></script>
+</body>
+</html>

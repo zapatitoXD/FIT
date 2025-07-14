@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi Rutina de Hoy</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <h1>Rutina del Día</h1>
+
+  <div id="rutina-container"></div>
+
+  <button id="registrar-progreso">Registrar Progreso</button>
+  <p id="respuesta-progreso" style="color: green;"></p>
+
+  <!-- Botón siempre visible para volver -->
+  <button id="volver-dashboard">Volver al Dashboard</button>
+
+  <script src="{{ url_for('static', filename='js/rutina.js') }}"></script>
+  <script>
+    document.getElementById("volver-dashboard").addEventListener("click", () => {
+      window.location.href = "/dashboard";  // Asegúrate que esta ruta exista en Flask
+    });
+  </script>
+</body>
+</html>

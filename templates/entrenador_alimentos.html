@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Insertar Alimento</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Insertar nuevo alimento</h1>
+
+    <form id="form-alimento">
+      <label>Nombre:</label>
+      <input type="text" id="nombre" required>
+
+      <label>Unidad (g, ml, etc.):</label>
+      <input type="text" id="unidad" required>
+
+      <label>Porción estándar (ej: 100):</label>
+      <input type="number" id="porcion" min="1" step="1" required>
+
+      <label>Calorías por porción:</label>
+      <input type="number" id="calorias" step="0.1" min="0" required>
+
+      <fieldset>
+        <legend>Macronutrientes (por porción)</legend>
+        <label>Proteína (g):</label>
+        <input type="number" id="proteina" step="0.1" min="0" required>
+
+        <label>Grasa (g):</label>
+        <input type="number" id="grasa" step="0.1" min="0" required>
+
+        <label>Carbohidratos (g):</label>
+        <input type="number" id="carbohidratos" step="0.1" min="0" required>
+      </fieldset>
+
+      <label>Micronutrientes (opcional, en formato JSON):</label>
+      <textarea id="micros" placeholder='Ej: {"fibra": 2.5, "calcio": 100}' rows="4"></textarea>
+
+      <button type="submit">Insertar alimento</button>
+    </form>
+
+    <div id="respuesta" style="margin-top: 1rem;"></div>
+
+    <hr>
+
+    <h2>Lista de alimentos</h2>
+
+    <label for="buscador">Buscar por nombre:</label>
+    <input type="text" id="buscador" placeholder="Ej: manzana">
+
+    <table border="1" style="margin-top: 1rem; width: 100%;">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Porción</th>
+          <th>Calorías</th>
+          <th>Macros</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-alimentos">
+        <!-- Se llenará dinámicamente -->
+      </tbody>
+    </table>
+
+    <br>
+    <button onclick="window.location.href='/entrenador'">⬅ Volver al panel</button>
+  </div>
+
+  <script src="/static/js/entrenador_alimentos.js"></script>
+</body>
+</html>

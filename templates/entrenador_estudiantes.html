@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Estudiantes</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Lista de Estudiantes</h1>
+
+    <form id="form-busqueda">
+      <input type="text" id="buscar-nombre" placeholder="Buscar por nombre...">
+      <input type="text" id="buscar-carrera" placeholder="Buscar por carrera...">
+      <button type="submit">Buscar</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Código Univ.</th>
+          <th>Carrera</th>
+          <th>Edad</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-estudiantes">
+        <!-- Se llena dinámicamente -->
+      </tbody>
+    </table>
+
+    <br>
+    <button onclick="window.location.href='/entrenador'">⬅ Volver al panel</button>
+
+  </div>
+
+  <script src="/static/js/entrenador_estudiantes.js"></script>
+</body>
+</html>

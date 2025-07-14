@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Progreso del Estudiante</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>📊 Progreso del Estudiante</h1>
+
+  <!-- Balance calórico -->
+  <section>
+    <h2>Balance calórico (últimos 7 días)</h2>
+    <canvas id="grafico-balance" width="100%" height="50"></canvas>
+  </section>
+
+  <!-- Cumplimiento de rutinas -->
+  <section style="margin-top: 40px;">
+    <h2>Cumplimiento de rutinas (últimos 7 días)</h2>
+    <canvas id="grafico-cumplimiento" width="100%" height="50"></canvas>
+    <p id="detalle-cumplimiento" style="margin-top: 10px; font-weight: bold;"></p>
+    <div id="porcentaje-detallado" style="text-align: center; margin-top: 20px; font-size: 1.1em;"></div>
+  </section>
+
+  <!-- Línea de cumplimiento diario -->
+  <section style="margin-top: 40px;">
+    <h2>📈 Línea de cumplimiento diario</h2>
+    <canvas id="grafico-cumplimiento-linea" width="100%" height="50"></canvas>
+  </section>
+
+  <!-- Distribución de Macronutrientes -->
+  <section style="margin-top: 40px;">
+    <h2>🥗 Distribución de macronutrientes (últimos 7 días)</h2>
+    <canvas id="grafico-macros" width="100%" height="50"></canvas>
+  </section>
+
+  <!-- Botón de regreso -->
+  <div style="margin-top: 30px; text-align: center;">
+    <button onclick="window.location.href='/dashboard'">Volver al Dashboard</button>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/progreso.js') }}"></script>
+</body>
+</html>

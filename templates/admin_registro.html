@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Usuarios</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Registrar / Editar Usuario</h1>
+
+  <form id="form-usuario">
+    <label>Nombre:</label>
+    <input type="text" name="nombre" required>
+
+    <label>Email:</label>
+    <input type="email" name="email" required>
+
+    <label>Rol:</label>
+    <select name="rol" required>
+      <option value="">-- Selecciona --</option>
+      <option value="estudiante">Estudiante</option>
+      <option value="entrenador">Entrenador</option>
+      <option value="admin">Admin</option>
+    </select>
+
+    <label>Código Universitario:</label>
+    <input type="text" name="codigo_universitario">
+
+    <label>Sexo:</label>
+    <select name="sexo">
+      <option value="">-- Selecciona --</option>
+      <option value="M">Masculino</option>
+      <option value="F">Femenino</option>
+    </select>
+
+    <label>Edad:</label>
+    <input type="number" name="edad" min="1">
+
+    <label>Carrera:</label>
+    <input type="text" name="carrera">
+
+    <label>Contraseña (solo al registrar):</label>
+    <input type="password" name="password" required>
+
+    <br>
+    <button type="submit">Registrar usuario</button>
+  </form>
+
+  <div id="respuesta" style="margin-top: 10px; color: green;"></div>
+
+  <hr>
+  <h2>Usuarios Registrados</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Rol</th>
+        <th>Código</th>
+        <th>Sexo</th>
+        <th>Edad</th>
+        <th>Carrera</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="tabla-usuarios">
+      <!-- Usuarios cargados dinámicamente -->
+    </tbody>
+  </table>
+
+  <br>
+  <button onclick="window.location.href='/dashboard-admin'">⬅ Volver al panel</button>
+</div>
+
+<script src="/static/js/admin_registro.js"></script>
+</body>
+</html>

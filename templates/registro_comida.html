@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registrar Comida</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <h1>Registro de Comidas</h1>
+
+  <p class="explicacion">
+    ⚠️ Para alimentos personalizados los valores de calorías, proteínas, grasas, carbohidratos y micronutrientes deben ingresarse por cada <strong>100 gramos</strong> del alimento.<br>
+      ✏️ Solo se pueden editar las porciones de alimentos del <strong>catálogo</strong>. Si necesitas cambiar uno personalizado, elimínalo y vuelve a registrarlo.
+  </p>
+
+  <form id="form-comidas">
+    <div id="alimentos-container"></div>
+    <div style="margin-top: 10px;">
+      <button type="button" id="agregar-catalogo">Agregar del catálogo</button>
+      <button type="button" id="agregar-personalizado">Agregar personalizado</button>
+    </div>
+    <br>
+    <button type="submit">Registrar comidas</button>
+  </form>
+
+  <p id="respuesta" style="color: green;"></p>
+
+  <h2>Comidas registradas hoy</h2>
+  <div id="comidas-hoy" style="margin-bottom: 20px;">Cargando...</div>
+
+  <button onclick="window.location.href='/dashboard'">Volver al Dashboard</button>
+
+  <script src="{{ url_for('static', filename='js/registro_comida.js') }}"></script>
+</body>
+</html>

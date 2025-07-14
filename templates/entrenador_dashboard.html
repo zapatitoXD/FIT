@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Panel del Entrenador</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 id="bienvenida">Bienvenido, entrenador</h1>
+
+    <div class="botones">
+      <button onclick="location.href='/entrenador/alimentos'">Insertar alimentos</button>
+      <button onclick="location.href='/entrenador/estudiantes'">Ver estudiantes</button>
+      <button onclick="location.href='/entrenador/ejercicios'">Crear ejercicios</button>
+      <button onclick="location.href='/entrenador/rutinas'">Asignar rutinas</button>
+    </div>
+
+    <button id="logout-btn">Cerrar sesión</button>
+  </div>
+
+  <script src="/static/js/dashboard_entrenador.js"></script>
+</body>
+</html>

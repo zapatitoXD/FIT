@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Ejercicios</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Gestión de Ejercicios</h1>
+
+    <form id="form-ejercicio">
+      <label for="nombre">Nombre del ejercicio:</label>
+      <input type="text" id="nombre" required>
+
+      <label for="tipo">Tipo:</label>
+      <select id="tipo" required>
+        <option value="">--Selecciona tipo--</option>
+        <option value="tiempo">Tiempo (minutos)</option>
+        <option value="repeticiones">Repeticiones</option>
+      </select>
+
+      <label for="calorias">Calorías quemadas por unidad:</label>
+      <input type="number" id="calorias" step="0.1" min="0" required>
+
+      <button type="submit">Crear ejercicio</button>
+    </form>
+
+    <div id="mensaje" style="margin-top: 10px;"></div>
+
+    <h2>Ejercicios registrados</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Tipo</th>
+          <th>Calorías</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-ejercicios">
+        <!-- Contenido generado dinámicamente -->
+      </tbody>
+    </table>
+
+    <br>
+    <button onclick="window.location.href='/entrenador'">⬅ Volver al panel</button>
+  </div>
+
+  <script src="/static/js/entrenador_ejercicios.js"></script>
+</body>
+</html>
